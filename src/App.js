@@ -3,6 +3,7 @@ import './App.css';
 import ProductList from './components/ProductList.js'
 import Footer from './components/Footer.js'
 import { useState } from 'react';
+import Form from './components/Form'
 function App() {
  
   const[arr,setarr]=useState([{
@@ -57,8 +58,20 @@ setTotalPrice(newtotalprice)
 setarr(newarr)
   }
   const[TotalPrice,setTotalPrice]=useState(0)
+  const add = (name,price)=>{
+    let newproductlist = [...arr];
+    newproductlist.push({
+      Brand:name,
+      Price: price,
+      Quantity:"0"
+    })
+    setarr(newproductlist)
+  }
   return (
     <>
+    
+
+    <Form add={add}></Form>
     
     <ProductList ProductList={arr} increasefunc={increaseprice} decreaseprice={decreaseprice} remove={remove}></ProductList>
     <Footer  reset ={reset} TotalPrice={TotalPrice} ></Footer>

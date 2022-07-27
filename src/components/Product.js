@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Product(props) {
+  console.log(props.product.Price)
   return (
     <div
       className="container my-3 position-relative"
@@ -38,6 +39,7 @@ export default function Product(props) {
       <button type="button" class="btn btn-dark " onClick={()=>{props.remove(props.indexis)}} style={{marginBottom:"10px"}}>REMOVE</button>
       </div>
       </div>
+
     </div>
   );
 }
